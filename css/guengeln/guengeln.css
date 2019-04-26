@@ -1,0 +1,161 @@
+@font-face {
+  font-family: 'Noto';
+  font-style: bold;
+  font-weight: 300;
+  src: url('../webfonts/NotoSans-Bold.ttf') format('truetype');
+}
+
+* {
+  margin: 0;
+  font-family: 'Noto';
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: lightgrey;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.content {
+  flex: 1;
+  overflow-y: scroll;
+  scrollbar-width: none;
+}
+
+.content::-webkit-scrollbar {
+  width: 0 !important;
+}
+
+.login {
+  display: flex;
+  justify-content: center;
+  vertical-align: middle;
+}
+
+.login form {
+  background-color: grey;
+  padding: 10px;
+  border: 6px solid #F4511E;
+  height: 100%;
+}
+
+.login input {
+  font-size: 20px;
+  width: 600px;
+  border: none;
+  padding: 10px;
+}
+
+.login button {
+  width: 100%;
+}
+
+.navbar-up {
+  background-color: #424242;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  border-bottom: 6px solid #F4511E;
+}
+
+form {
+  height: 7px;
+  display: inline;
+  margin: 0px;
+  padding: 0px;
+}
+
+button {
+  float: center;
+  background-color: #616161;
+  border: none;
+  text-align: center;
+  font-weight: bold;
+  color: white;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+button:hover {
+  color: #F4511E;
+}
+
+button:focus {
+  outline: 0;
+}
+
+.footer {
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #616161;
+  color: white;
+  text-align: center;
+}
+
+.navbar-up a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  font-weight: bold;
+  margin: 10px;
+  padding: 5px 20px 5px 20px;
+  text-decoration: none;
+  font-size: 20px;
+  position: bottom;
+}
+
+.navbar-up a:hover {
+  color: #1976D2;
+}
+
+.navbar-up a.active {
+  color: white;
+}
+
+.navbar-up div {
+  float: left;
+}
+
+.navbar-down {
+  background-color: #616161;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-down a {
+  float: left;
+  color: white;
+  background-color: #F4511E;
+  text-align: center;
+  font-weight: bold;
+  padding: 5px 20px 5px 20px;
+  text-decoration: none;
+  font-size: 20px;
+  position: bottom;
+}
+
+.navbar-down button {
+  float: right;
+  color: white;
+  background-color: #F4511E;
+  text-align: center;
+  font-weight: bold;
+  padding: 5px 20px 5px 20px;
+  text-decoration: none;
+  font-size: 20px;
+  position: bottom;
+}
+
+.navbar-down button:hover {
+  color: black;
+}

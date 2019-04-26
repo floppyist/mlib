@@ -1,0 +1,12 @@
+<div id="player" class="footer">
+  <progress id="progress" value="0" min="0" max="100"></progress>
+  <audio id="audio" style='width: 100%'></audio>
+  <div>
+    <button id="backward" class="fas fa-backward"></button>
+    <button id="playstop" class="fas fa-play"></button>
+    <button id="loop" class="fas fa-undo"></button>
+    <button id="forward" class="fas fa-forward"></button>
+    <progress id="volbar" min="0" max="100" value="100" step="1" onload="getVolume()"></progress>
+  </div>
+</div>
+<script src="js/player.js"></script>
