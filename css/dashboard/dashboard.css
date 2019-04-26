@@ -15,10 +15,6 @@ ul {
   margin: 0;
 }
 
-li {
-  border-bottom: 3px groove #F4511E;
-}
-
 li:hover {
   background-color: darkgrey;
 }
