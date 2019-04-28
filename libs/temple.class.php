@@ -22,12 +22,12 @@ class Temple {
   }
 
   private function loadTemplates( $dir ) {
-    $paths = glob( "$dir/*.tpl" );
+    $paths = glob( $dir . "/*.tpl" );
 
     # iterate each template which was found
     foreach ( $paths as $path ) {
       # split into lines
-      $lines = explode( "\n", file_get_contents( $path ) );
+      $lines = file( $path );
       $text  = "";
 
       foreach ( $lines as $line ) {
@@ -37,7 +37,7 @@ class Temple {
         }
 
         # always write the whole text
-        $text .= "\n$line";
+        $text .= "\n" . $line;
 
         # push text into array
         $templates[ pathinfo( $path, PATHINFO_FILENAME ) ][ "text" ] = $text;
@@ -53,7 +53,7 @@ class Temple {
     # iterate each component which was found
     foreach ( $paths as $path ) {
       # split into lines
-      $lines = explode( "\n", file_get_contents( $path ) );
+      $lines = file( $path );
       $text  = "";
 
       foreach ( $lines as $line ) {
@@ -63,7 +63,7 @@ class Temple {
         }
 
         # always write the whole text
-        $text .= "\n$line";
+        $text .= "\n" . $line;
 
         # push text into array
         $components[ pathinfo( $path, PATHINFO_FILENAME ) ][ "text" ] = $text;

@@ -1,10 +1,10 @@
 <?php
 
 include_once( "libs/temple.class.php" );
-include_once( "libs/muslib.class.php" );
+include_once( "libs/mlib.class.php" );
 include_once( "cfg/config.php" );
 
-$temple = new Temple( "html/templates", "html/components", false );
+$temple = new Temple( $templatesPath, $componentsPath, false );
 
 session_start();
 
@@ -34,12 +34,12 @@ if ( isset( $_POST[ "auth" ] ) ) {
 
 if ( isset( $_SESSION[ "login" ] ) ) {
   if ( $_SESSION[ "login" ] == true ) {
-    $muslib = new Muslib( $musicPath );
+    $mlib = new Mlib( $musicPath );
 
     # add content to the available attributes from the components
     $parameters[ "css" ]       = "<link rel='stylesheet' href='css/dashboard/dashboard.css'/>";
     $parameters[ "greetings" ] = $_SESSION[ "user" ];
-    $parameters[ "songs" ]     = $muslib->loadPlaylist( $_SESSION[ "user" ] );
+    $parameters[ "songs" ]     = $mlib->loadPlaylist( $_SESSION[ "user" ] );
 
     $temple->renderTemplate( "dashboard", $parameters );
 

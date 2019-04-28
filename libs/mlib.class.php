@@ -1,6 +1,6 @@
 <?php
 
-class Muslib {
+class Mlib {
   private $musicPath;
   private $music = array();
 
@@ -9,7 +9,7 @@ class Muslib {
   }
 
   public function loadPlaylist( $username ) {
-    $songs = glob( "$this->musicPath/$username/*.mp3" );
+    $songs = glob( $this->musicPath . "/" . $username . "/*.mp3" );
 
     $playlist = "";
 
@@ -30,7 +30,7 @@ class Muslib {
    */
   public function getSelectedSong( $songId ) {
     if ( isset( $this->music[ $songId ] ) ) {
-      return file_get_contents( $this->music[ $songId ] );
+      readfile( $this->music[ $songId ] );
     }
   }
 }
