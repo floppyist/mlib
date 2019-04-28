@@ -3,10 +3,6 @@
 include_once( "libs/temple.class.php" );
 include_once( "libs/muslib.class.php" );
 
-if ( $_SERVER[ "REQUEST_URI" ] != "/" ) {
-  header( 'Location: /' );
-}
-
 $temple = new Temple( "html/templates", "html/components", false );
 
 session_start();

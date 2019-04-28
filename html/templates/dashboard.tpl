@@ -10,7 +10,7 @@
       <div class='navbar-down'>
         {{userinfo}}
         {{logout}}
-        <button>Playlists</button>
+        <button id='playlists'>Playlists</button>
         <button id='download'>Download</button>
       </div>
     <div class='content'>
