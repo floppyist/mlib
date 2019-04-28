@@ -2,6 +2,7 @@
 
 include_once( "libs/temple.class.php" );
 include_once( "libs/muslib.class.php" );
+include_once( "cfg/config.php" );
 
 $temple = new Temple( "html/templates", "html/components", false );
 
@@ -33,7 +34,7 @@ if ( isset( $_POST[ "auth" ] ) ) {
 
 if ( isset( $_SESSION[ "login" ] ) ) {
   if ( $_SESSION[ "login" ] == true ) {
-    $muslib = new Muslib( "/srv/data/music" );
+    $muslib = new Muslib( $musicPath );
 
     # add content to the available attributes from the components
     $parameters[ "css" ]       = "<link rel='stylesheet' href='css/dashboard/dashboard.css'/>";
