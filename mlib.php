@@ -2,9 +2,9 @@
 
 include_once( "libs/temple.class.php" );
 include_once( "libs/mlib.class.php" );
-include_once( "cfg/config.php" );
 
-$temple = new Temple( $templatesPath, $componentsPath, false );
+$config = json_decode( file_get_contents( "cfg/config.json" ), true );
+$temple = new Temple( $config[ "temple" ][ "templates_path" ], $config[ "temple" ][ "components_path" ], false );
 
 session_start();
 
@@ -34,7 +34,7 @@ if ( isset( $_POST[ "auth" ] ) ) {
 
 if ( isset( $_SESSION[ "login" ] ) ) {
   if ( $_SESSION[ "login" ] == true ) {
-    $mlib = new Mlib( $musicPath );
+    $mlib = new Mlib( $config[ "general" ][ "data_path" ] );
 
     # add content to the available attributes from the components
     $parameters[ "css" ]       = "<link rel='stylesheet' href='css/dashboard/dashboard.css'/>";

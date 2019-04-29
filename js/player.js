@@ -119,6 +119,7 @@ function changeTrack( last_songId, current_songId ) {
   tracks[ last_songId ].classList.remove( "active" );
   tracks[ current_songId ].classList.add( "active" );
   player.src = "inc/loadSong.php?songId=" + current;
+  player.load();
 
   document.title = "MLib [" + tracks[ current_songId ].text + "]";
 }
