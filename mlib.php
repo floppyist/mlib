@@ -4,7 +4,7 @@ include_once( "libs/temple.class.php" );
 include_once( "libs/mlib.class.php" );
 
 $config = json_decode( file_get_contents( "cfg/config.json" ), true );
-$temple = new Temple( $config[ "temple" ][ "templates_path" ], $config[ "temple" ][ "components_path" ], false );
+$temple = new Temple( "html/templates", "html/components", false );
 
 session_start();
 

@@ -1,4 +1,4 @@
-var player   = document.getElementById( 'audio' );
+var audio   = document.getElementById( 'audio' );
 var playlist = document.getElementById( 'playlist' );
 var playstop = document.getElementById( 'playstop' );
 var forward  = document.getElementById( 'forward' );
@@ -15,7 +15,7 @@ var len      = tracks.length;
 // set first song to default
 changeTrack( current, current );
 
-player.addEventListener( 'ended', function( e ) {
+audio.addEventListener( 'ended', function( e ) {
   last = current;
   current++;
 
@@ -24,7 +24,7 @@ player.addEventListener( 'ended', function( e ) {
   }
 
   changeTrack( last, current );
-  player.play();
+  audio.play();
 });
 
 playlist.addEventListener( 'click', function( e ) {
@@ -34,16 +34,16 @@ playlist.addEventListener( 'click', function( e ) {
   changeTrack( last, current );
   playstop.className = "fas fa-pause";
 
-  player.play();
+  audio.play();
 });
 
 playstop.addEventListener( 'click', function( e ) {
-  if ( player.paused ) {
+  if ( audio.paused ) {
     playstop.className = "fas fa-pause";
-    player.play();
+    audio.play();
   } else {
     playstop.className = "fas fa-play";
-    player.pause();
+    audio.pause();
   }
 });
 
@@ -57,7 +57,7 @@ forward.addEventListener( 'click', function( e ) {
   }
 
   playstop.className = "fas fa-pause";
-  player.autoplay = true;
+  audio.autoplay = true;
 
   changeTrack( last, current );
 });
@@ -72,7 +72,7 @@ backward.addEventListener( 'click', function( e ) {
   }
 
   playstop.className = "fas fa-pause";
-  player.autoplay = true;
+  audio.autoplay = true;
 
   changeTrack( last, current );
 });
@@ -83,16 +83,16 @@ progress.addEventListener( 'click', function( e ) {
 
   clickedValue = x * this.max / this.offsetWidth;
 
-  player.currentTime = clickedValue;
+  audio.currentTime = clickedValue;
   progress.value     = clickedValue;
 });
 
-player.addEventListener( 'timeupdate', function( e ) {
-  progress.value = player.currentTime;
+audio.addEventListener( 'timeupdate', function( e ) {
+  progress.value = audio.currentTime;
 });
 
-player.addEventListener( "loadeddata", function() {
-  progress.max = player.duration;
+audio.addEventListener( "loadeddata", function() {
+  progress.max = audio.duration;
 });
 
 volume.addEventListener( 'click', function( e ) {
@@ -102,15 +102,15 @@ volume.addEventListener( 'click', function( e ) {
   clickedValue = x * this.max / this.offsetWidth;
 
   volume.value  = clickedValue;
-  player.volume = clickedValue / 100;
+  audio.volume = clickedValue / 100;
 });
 
 loop.addEventListener( 'click', function( e ) {
-  if ( player.loop == true ) {
-    player.loop = false;
+  if ( audio.loop == true ) {
+    audio.loop = false;
     loop.style  = "color: white";
   } else {
-    player.loop = true;
+    audio.loop = true;
     loop.style  = "color: #f4511e";
   }
 });
@@ -118,8 +118,8 @@ loop.addEventListener( 'click', function( e ) {
 function changeTrack( last_songId, current_songId ) {
   tracks[ last_songId ].classList.remove( "active" );
   tracks[ current_songId ].classList.add( "active" );
-  player.src = "inc/loadSong.php?songId=" + current;
-  player.load();
+  audio.src = "inc/loadSong.php?songId=" + current;
+  audio.load();
 
   document.title = "MLib [" + tracks[ current_songId ].text + "]";
 }

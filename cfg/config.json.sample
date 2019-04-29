@@ -1,9 +1,5 @@
 {
   "general": {
     "data_path":"path/to/your/music"
-  },
-  "temple": {
-    "templates_path":"path/to/your/templates",
-    "components_path":"path/to/your/components"
   }
 }
