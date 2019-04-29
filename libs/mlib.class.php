@@ -30,6 +30,7 @@ class Mlib {
    */
   public function getSelectedSong( $songId ) {
     if ( isset( $this->music[ $songId ] ) ) {
+      header( "Content-Type: " . mime_content_type( $this->music[ $songId ] ) );
       readfile( $this->music[ $songId ] );
     }
   }

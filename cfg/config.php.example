@@ -4,7 +4,7 @@
 $musicPath = "path/to/your/music";
 
 # temple configuration
-$componentsPath = "html/components";
-$templatesPath  = "html/templates"
+$templatesPath  = "path/to/your/templates"
+$componentsPath = "path/to/your/components";
 
 ?>
