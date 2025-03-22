@@ -1,5 +1,9 @@
 # mLib - Simple and easy-to-use music library for sharing across your network
 
+<p align="center">
+    <img src="screenshots/screenshot.png" />
+</p>
+
 ## Disclaimer
 This project is still under development. Currently there is only one hardcoded user.
 
@@ -28,12 +32,8 @@ mv config.json.sample config.json
 
 Make sure that your music is always in a folder that corresponds to the current mlib user. For example, if the music is in **/home/USER/music**, the folder structure must be as follows:
 
-```json
-{
-  "general": {
-    "data_path":"/home/<USERNAME>/music/<MLIB_USERNAME>/<YOUR_MUSIC_FILES>"
-  }
-}
+```bash
+/home/<USER>/music/<MLIB_USER>/*.mp3
 ```
 
 ### Run
